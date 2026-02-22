@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.437668mm"
+   height="71.437675mm"
+   viewBox="0 0 71.437668 71.437675"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><g
+     id="layer1"
+     style="display:inline"
+     transform="translate(-69.320741,-112.71242)"><g
+       transform="matrix(0.2790534,0,0,0.2790534,69.320748,112.71241)"
+       id="g2">
+	<path
+   class="st0"
+   d="M 0,0 H 256 V 256 H 0 Z"
+   id="path1"
+   style="opacity:1" />
+	<path
+   class="st1"
+   d="m 119.4,144.7 -44,-82.3 h 20.1 l 25.8,52.1 c 0.4,0.9 0.9,1.9 1.4,2.9 0.5,1 1,2 1.4,3.1 0.3,0.4 0.5,0.8 0.6,1.1 0.1,0.3 0.3,0.6 0.4,0.9 0.7,1.3 1.3,2.6 1.8,3.9 0.5,1.3 1,2.4 1.4,3.5 1.1,-2.3 2.2,-4.7 3.5,-7.3 1.3,-2.6 2.6,-5.3 3.9,-8.1 l 26.2,-52.1 h 18.7 l -44.3,83.3 v 53.1 h -16.9 z"
+   id="path2" />
+</g><path
+       style="fill:none;stroke:#ffffff;stroke-width:4.79135;stroke-linecap:butt"
+       id="path3"
+       d="m 88.856493,158.64375 a 10.45193,10.873871 0 0 1 -5.225965,-9.41705 10.45193,10.873871 0 0 1 5.225965,-9.41705" /><path
+       style="fill:none;stroke:#ffffff;stroke-width:4.791;stroke-linecap:butt;stroke-dasharray:none"
+       id="path3-3"
+       d="m 84.352101,165.3626 a 18.465078,19.210505 0 0 1 -9.232539,-16.63679 18.465078,19.210505 0 0 1 9.232539,-16.63678" /><path
+       style="fill:none;stroke:#ffffff;stroke-width:4.79135;stroke-linecap:butt"
+       id="path3-8"
+       d="m -120.79697,158.57876 a 10.45193,10.873871 0 0 1 -5.22597,-9.41705 10.45193,10.873871 0 0 1 5.22597,-9.41705"
+       transform="scale(-1,1)" /><path
+       style="fill:none;stroke:#ffffff;stroke-width:4.79135;stroke-linecap:butt"
+       id="path3-3-6"
+       d="m -125.30136,165.55518 a 18.465078,19.210505 0 0 1 -9.23254,-16.63678 18.465078,19.210505 0 0 1 9.23254,-16.63679"
+       transform="scale(-1,1)" /></g><style
+     type="text/css"
+     id="style1">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FB651E;}
+	.st1{fill:#FFFFFF;}
+</style></svg>

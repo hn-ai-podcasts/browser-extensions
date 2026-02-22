@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+echo "🔍 Running pre-commit checks..."
+
+STAGED_JS=$(git diff --cached --name-only --diff-filter=ACM | grep -E '^src/.*\.js$' || true)
+
+if [ -n "$STAGED_JS" ]; then
+  echo "\n🧹 Stripping comments..."
+  echo "$STAGED_JS" | xargs bun run scripts/strip-comments.ts
+
+  echo "\n🔍 Formatting and linting with Biome..."
+  echo "$STAGED_JS" | xargs bunx @biomejs/biome check --write --unsafe
+
+  echo "$STAGED_JS" | xargs git add
+fi
+
+echo "\n🔍 Running lint-staged..."
+bunx lint-staged
+
+echo "\n✅ Pre-commit checks passed!"

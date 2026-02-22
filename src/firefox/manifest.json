@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "HN Podcasts",
+  "version": "0.1.3",
+  "description": "Create podcasts in your language on Hacker News",
+  "permissions": ["storage", "activeTab", "scripting", "alarms"],
+  "host_permissions": [
+    "https://news.ycombinator.com/*"
+  ],
+  "icons": {
+    "48": "icons/hn_podcast_logo.svg",
+    "96": "icons/hn_podcast_logo.svg"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/hn_podcast_logo.svg",
+      "96": "icons/hn_podcast_logo.svg"
+    },
+    "default_title": "HN Podcasts"
+  },
+  "background": {
+    "scripts": ["browser-polyfill.min.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://news.ycombinator.com/*"],
+      "js": [
+        "browser-polyfill.min.js",
+        "content_script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "@hn-ai-podcasts",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "websiteContent"
+        ]
+      }
+    }
+  }
+}

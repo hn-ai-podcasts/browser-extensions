@@ -1,0 +1,32 @@
+{
+  "name": "hn-podcast-extension",
+  "version": "1.0.0",
+  "description": "HN AI Podcast Extension - Auditable public release",
+  "type": "module",
+  "scripts": {
+    "postinstall": "bun run scripts/setup-vendor.ts",
+    "dev:chrome": "bun --watch scripts/build.ts chrome",
+    "dev:firefox": "bun --watch scripts/build.ts firefox",
+    "build": "bun run scripts/build.ts",
+    "build:chrome": "bun run scripts/build.ts chrome",
+    "build:firefox": "bun run scripts/build.ts firefox",
+    "lint": "biome check src/",
+    "lint:fix": "biome check --write --unsafe src/",
+    "clean": "rm -rf dist releases vendor",
+    "release": "bun run scripts/release.ts",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "latest",
+    "@types/chrome": "^0.0.268",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.10",
+    "webextension-polyfill": "^0.12.0"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "biome check --write --unsafe --no-errors-on-unmatched"
+    ]
+  }
+}
