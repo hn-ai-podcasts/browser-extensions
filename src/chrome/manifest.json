@@ -1,21 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "HN Podcasts",
+  "name": "HN AI Podcasts",
   "version": "0.1.3",
-  "description": "Create podcasts in your language on Hacker News",
+  "description": "Create and listen podcasts in your language on Hacker News",
   "icons": {
     "16": "icons/hn_podcast_logo_16.png",
     "32": "icons/hn_podcast_logo_32.png",
     "48": "icons/hn_podcast_logo_48.png",
     "128": "icons/hn_podcast_logo_128.png"
   },
-  "permissions": ["storage", "activeTab", "scripting", "offscreen", "alarms"],
+  "permissions": ["storage", "offscreen", "alarms"],
   "host_permissions": [
     "https://news.ycombinator.com/*"
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "HN Podcasts",
+    "default_title": "HN AI Podcasts",
       "default_icon": {
         "16": "icons/hn_podcast_logo_16.png",
         "32": "icons/hn_podcast_logo_32.png"
