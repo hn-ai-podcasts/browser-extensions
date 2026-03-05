@@ -133,7 +133,8 @@ async function updateShowLink(langCode) {
   container.style.display = 'none';
   const show = await fetchShow(langCode);
   if (show?.feed_url) {
-    link.href = show.feed_url;
+    const podcastProtocolUrl = show.feed_url.replace(/^https?:\/\//i, 'podcast://');
+    link.href = podcastProtocolUrl;
     link.title = show.title || 'Subscribe';
     container.style.display = 'block';
   }
@@ -206,6 +207,15 @@ async function loadHNData() {
   });
 }
 async function init() {
+  try {
+    const platformInfo = await browser.runtime.getPlatformInfo();
+    if (platformInfo.os === 'android') {
+      const androidWarning = document.getElementById('android-warning');
+      if (androidWarning) {
+        androidWarning.style.display = 'block';
+      }
+    }
+  } catch (_e) {}
   const highlightCheckbox = document.getElementById('highlight-checkbox');
   const storedHighlight = await browser.storage.local.get('highlight_enabled');
   if (highlightCheckbox) {

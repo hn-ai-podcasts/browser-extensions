@@ -21,6 +21,17 @@ chrome.runtime.onMessage.addListener((msg) => {
       audio = new Audio(msg.url);
       currentId = msg.storyId;
       const seekTime = msg.currentTime;
+      if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+          title: msg.title || 'Hacker News Podcast',
+        });
+        navigator.mediaSession.setActionHandler('play', () => {
+          if (audio) audio.play();
+        });
+        navigator.mediaSession.setActionHandler('pause', () => {
+          if (audio) audio.pause();
+        });
+      }
       audio.onplay = () => sendState(true);
       audio.onpause = () => {
         sendState(false);

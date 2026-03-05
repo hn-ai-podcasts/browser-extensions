@@ -133,7 +133,8 @@ async function updateShowLink(langCode) {
   container.style.display = 'none';
   const show = await fetchShow(langCode);
   if (show?.feed_url) {
-    link.href = show.feed_url;
+    const podcastProtocolUrl = show.feed_url.replace(/^https?:\/\//i, 'podcast://');
+    link.href = podcastProtocolUrl;
     link.title = show.title || 'Subscribe';
     container.style.display = 'block';
   }

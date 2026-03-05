@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "HN AI Podcasts",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Create and listen podcasts in your language on Hacker News",
   "icons": {
     "16": "icons/hn_podcast_logo_16.png",

@@ -8,11 +8,11 @@
   Available in English and French (more soon, request your native language).
 
   <p>
-    <a href="https://chrome.google.com/webstore/detail/YOUR_ID_HERE">
-      <img src="https://img.shields.io/chrome-web-store/v/YOUR_ID_HERE?label=Chrome%20Web%20Store&logo=google-chrome&logoColor=white&color=blue" alt="Chrome Extension">
+    <a href="https://chrome.google.com/webstore/detail/ciibikmkclbockckdfocibeckflaloij">
+      <img src="https://img.shields.io/chrome-web-store/v/Yciibikmkclbockckdfocibeckflaloij?label=Chrome%20Web%20Store&logo=google-chrome&logoColor=white&color=blue" alt="Chrome Extension">
     </a>
-    <a href="https://addons.mozilla.org/firefox/addon/YOUR_ID_HERE">
-      <img src="https://img.shields.io/amo/v/YOUR_ID_HERE?label=Firefox%20Add-ons&logo=firefox-browser&logoColor=white&color=orange" alt="Firefox Add-on">
+    <a href="https://addons.mozilla.org/firefox/addon/hn-ai-podcasts">
+      <img src="https://img.shields.io/amo/v/hn-ai-podcasts?label=Firefox%20Add-ons&logo=firefox-browser&logoColor=white&color=orange" alt="Firefox Add-on">
     </a>
   </p>
 </div>

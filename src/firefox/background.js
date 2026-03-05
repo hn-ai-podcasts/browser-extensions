@@ -2,6 +2,33 @@ const _API_BASE = 'https://hn-ai-podcast.duckdns.org/api';
 let audioElement = null;
 const _currentPlayingStoryId = null;
 let isAudioLocked = false;
+let keepAliveContext = null;
+let keepAliveOscillator = null;
+function startKeepAlive() {
+  if (keepAliveContext) return;
+  try {
+    keepAliveContext = new (window.AudioContext || window.webkitAudioContext)();
+    keepAliveOscillator = keepAliveContext.createOscillator();
+    keepAliveOscillator.type = 'sine';
+    keepAliveOscillator.frequency.setValueAtTime(0.01, keepAliveContext.currentTime);
+    const gainNode = keepAliveContext.createGain();
+    gainNode.gain.setValueAtTime(0, keepAliveContext.currentTime);
+    keepAliveOscillator.connect(gainNode);
+    gainNode.connect(keepAliveContext.destination);
+    keepAliveOscillator.start();
+  } catch (_e) {}
+}
+function stopKeepAlive() {
+  if (keepAliveOscillator) {
+    keepAliveOscillator.stop();
+    keepAliveOscillator.disconnect();
+    keepAliveOscillator = null;
+  }
+  if (keepAliveContext) {
+    keepAliveContext.close();
+    keepAliveContext = null;
+  }
+}
 function ensureAudio() {
   if (!audioElement) {
     audioElement = new Audio();
@@ -12,9 +39,11 @@ function ensureAudio() {
     });
     audioElement.addEventListener('play', () => {
       isAudioLocked = false;
+      startKeepAlive();
       broadcastState();
     });
     audioElement.addEventListener('pause', () => {
+      stopKeepAlive();
       broadcastState();
     });
     audioElement.addEventListener('timeupdate', () => {
@@ -22,6 +51,7 @@ function ensureAudio() {
     });
     audioElement.addEventListener('ended', () => {
       isAudioLocked = false;
+      stopKeepAlive();
       broadcastState();
     });
     audioElement.addEventListener('error', (_e) => {

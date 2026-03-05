@@ -63,6 +63,7 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
           command: 'play',
           url: msg.url,
           storyId: incomingId,
+          title: msg.title,
         });
       }
     })();
